@@ -3,10 +3,10 @@ from flask_restful import Resource, Api
 from Crypto.PublicKey import RSA
 
 # creating the flask app
-Asymmetric_Key_Gen = Flask(__name__)
+asymmetric_key_gen_app = Flask(__name__)
 
 # creating an API object
-api = Api(Asymmetric_Key_Gen)
+api = Api(asymmetric_key_gen_app)
 
 class KeyApp(Resource):
     def get(self):
@@ -21,4 +21,4 @@ api.add_resource(KeyApp, '/key')
 
 # driver function
 if __name__ == '__main__':
-    Asymmetric_Key_Gen.run(debug=True, host='127.0.0.1', port=8080)
+    asymmetric_key_gen_app.run(debug=True, host='0.0.0.0', port=8080)
